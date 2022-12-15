@@ -1,0 +1,103 @@
+<mat-drawer-container class="container" autosize>
+   <mat-drawer #drawer class="sidenav" mode="side">
+      <img src="assets/img/user.png"  class="img" alt="Imagem de navegação">
+      <mat-nav-list class="nav-list">
+         <a routerLink="home"  class="mat-elevation-z1" mat-list-item>
+            <i class="material-icons">home</i>
+            Home
+         </a>
+         <a  (click)="escondeColaborador()" class="mat-elevation-z1" mat-list-item>
+            <i class="material-icons">badge</i>
+            Area do Colaborador
+         </a>
+         <mat-accordion *ngIf="hideColaborador" class="menuCadastros">
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header class="menu-cadastros">
+               <mat-panel-title >
+                  Cadastros
+               </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <a routerLink="paciente" mat-list-item>
+               <i class="material-icons">person_add</i>
+               Pacientes
+            </a>
+            <a routerLink="colaborador" mat-list-item>
+               <i class="material-icons">group_add</i>
+               Colaborador 
+            </a>
+            <a routerLink="profissional" mat-list-item>
+               <i class="material-icons">medical_information</i>
+               Profissional
+            </a>
+            <a routerLink="usuario" mat-list-item>
+               <i class="material-icons">medical_information</i>
+               Usuário
+            </a>
+         </mat-expansion-panel>
+      </mat-accordion>
+      <a  class="mat-elevation-z1" (click)="escondePaciente()" mat-list-item>
+         <i class="material-icons">manage_accounts</i>
+         Area do Paciente
+      </a>
+      
+      <a routerLink="" class="area-do-paciente" *ngIf="hidePaciente" mat-list-item>
+         <i class="material-icons">display_settings</i>
+         Dashboard
+      </a>
+      <a routerLink="avaliacao" class="mat-elevation-z1" mat-list-item>
+         <i class="material-icons">monitor_heart</i>
+         Avaliação
+      </a>
+      
+      <a routerLink="" class="mat-elevation-z1" mat-list-item>
+         <i class="material-icons">payments</i>
+         Pagamento
+      </a>
+      
+      <a routerLink="" class="mat-elevation-z1" (click)="escondeRelatorios()" mat-list-item>
+         <i class="material-icons">print</i>
+         Relatórios
+      </a>
+      
+      <a mat-list-item (click)="logout()">
+         <i class="material-icons">logout</i>
+         Logout
+      </a>
+      
+      <div *ngIf="hideRelatorios" class="mat-elevation-z8" class="menu-relatorios">
+         <a routerLink="" mat-list-item>
+            <i class="material-icons">receipt_long</i>
+            Rel. Paciente
+         </a>   
+         <a routerLink="" mat-list-item>
+            <i class="material-icons">receipt_long</i>
+            Rel. Colaborador
+         </a>
+         <a routerLink="" mat-list-item>
+            <i class="material-icons">receipt_long</i>
+            Rel. Profissional
+         </a>
+         <a routerLink="" mat-list-item>
+            <i class="material-icons">receipt_long</i>
+            Rel. Avaliações
+         </a>
+         <a routerLink="" mat-list-item>
+            <i class="material-icons">receipt_long</i>
+            Rel. Pagamentos
+         </a>
+      </div>
+      
+   </mat-nav-list>
+</mat-drawer>
+
+<div class="sidenav-content">
+   <app-header></app-header>
+   <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+   </button>
+   <router-outlet></router-outlet>
+</div>
+
+</mat-drawer-container>

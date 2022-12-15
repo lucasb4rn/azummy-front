@@ -1,0 +1,182 @@
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Atualizar Colaborador</h1>
+    
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input 
+            [(ngModel)]="colaborador.nome"
+            name="nome"
+            [formControl]="nome"
+            required
+            matInput 
+            placeholder="Ex. Maria Gomes Dias">
+        </mat-form-field>
+        
+        <div class="status-prioridade">
+            
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>cpf</mat-label>
+                <input 
+                [(ngModel)]="colaborador.cpf"
+                name="cpf"
+                [formControl]="cpf"
+                required
+                matInput 
+                placeholder="Ex. 364.220.058-30"
+                mask="000.000.000-00">
+            </mat-form-field>
+            
+            
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>rg</mat-label>
+                <input 
+                [(ngModel)]="colaborador.rg"
+                name="rg"
+                [formControl]="rg"
+                required
+                matInput 
+                placeholder="Ex. 42.302.383-4"
+                mask="00.000.000-0">
+            </mat-form-field>
+            
+        </div>
+        
+        
+        <div class="status-prioridade">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Data Nascimento</mat-label>
+                <input 
+                [(ngModel)]="colaborador.dataNascimento"
+                name="dataNascimento"
+                [formControl]="dataNascimento"
+                required
+                matInput 
+                placeholder="Ex. 30/03/1994"
+                mask="00/00/0000">
+            </mat-form-field>
+            
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Sexo</mat-label>
+                <mat-select 
+                [(ngModel)]="colaborador.sexo"
+                name="sexo"
+                [formControl]="sexo" 
+                required>
+                <mat-option value="0">MASCULINO</mat-option>
+                <mat-option value="1">FEMININO</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Endereço</mat-label>
+        <input 
+        [(ngModel)]="colaborador.endereco.endereco"
+        name="endereco"
+        [formControl]="endereco"
+        required
+        matInput 
+        placeholder="Ex. Rua Goias, 497">
+    </mat-form-field>
+    
+    <div class="status-prioridade">
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>CEP</mat-label>
+            <input 
+            [(ngModel)]="colaborador.endereco.cep"
+            name="cep"
+            [formControl]="cep"
+            required
+            matInput 
+            placeholder="Ex. 14080-260"
+            mask="00000-000">
+        </mat-form-field>
+        
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input 
+            [(ngModel)]="colaborador.endereco.cidade"
+            name="cidade"
+            [formControl]="cidade"
+            required
+            matInput 
+            placeholder="Ex. Ribeirão Preto">
+        </mat-form-field>
+        
+        
+    </div>  
+    
+    <div class="status-prioridade">
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>UF</mat-label>
+            <input 
+            [(ngModel)]="colaborador.endereco.uf"
+            name="uf"
+            [formControl]="uf"
+            required
+            matInput 
+            placeholder="Ex. São Paulo">
+        </mat-form-field>
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Pais</mat-label>
+            <input 
+            [(ngModel)]="colaborador.endereco.pais"
+            name="pais"
+            [formControl]="pais"
+            required
+            matInput 
+            placeholder="Ex. Brasil">
+        </mat-form-field>   
+    </div>
+    
+    
+    <div class="status-prioridade">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>telefone</mat-label>
+            <input 
+            [(ngModel)]="colaborador.contato.telefone"
+            name="telefone"
+            [formControl]="telefone"
+            required
+            matInput 
+            placeholder="Ex. 16 994157664"
+            mask="(00)00000-0000">
+        </mat-form-field>    
+               
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Celular</mat-label>
+            <input 
+            [(ngModel)]="colaborador.contato.celular"
+            name="celular"
+            [formControl]="celular"
+            required
+            matInput 
+            placeholder="Ex. 16 994157664"
+            mask="(00)00000-0000">
+        </mat-form-field>  
+    </div>
+    
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input 
+        [(ngModel)]="colaborador.contato.email"
+        name="email"
+        [formControl]="email"
+        required
+        matInput 
+        placeholder="Ex. lucas.b4rn@gmail.com">
+    </mat-form-field>    
+</form>
+
+
+<button (click)="update()" [disabled]="!validaCampos()" class="full-width mat-elevation-z4" mat-raised-button color="primary">Atualizar</button>
+<button (click)="cancel()" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Cancelar</button>
+
+<p class="full-width">Desnvolvido por Lucas Fonseca</p>
+</div>
