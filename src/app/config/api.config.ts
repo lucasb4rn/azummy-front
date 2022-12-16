@@ -1,3 +1,3 @@
 export const API_CONFIG = {
-   baseUrl : 'localhost:9000'
+   baseUrl : 'http://3.18.176.164:9000'
 }

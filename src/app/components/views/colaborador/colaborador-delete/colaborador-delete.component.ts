@@ -54,16 +54,8 @@ export class ColaboradorDeleteComponent implements OnInit {
       this.toast.success('Colaborador deletado com sucesso', 'Delete');
       this.router.navigate(['colaborador'])
     }, ex => {
-      if(ex.error.errors) {
-        ex.error.errors.forEach((element: any) => {
-          this.toast.error(element.message);
-        });
-      } else {
-        this.toast.error(ex.error.message);
-      }
+      this.toast.error(ex.error.error);
     })
   }
-  
-  
-  
+
 }

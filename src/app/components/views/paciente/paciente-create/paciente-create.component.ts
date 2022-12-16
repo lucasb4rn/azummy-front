@@ -67,6 +67,10 @@ export class PacienteCreateComponent implements OnInit {
     })
   }
 
+  cancel(){
+    this.router.navigate(['paciente']);
+   }
+
   validaCampos(): boolean {
     return this.nome.valid && this.cpf.valid && this.rg.valid && 
     this.sexo.valid && this.dataNascimento.valid && this.telefone.valid && 

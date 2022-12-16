@@ -45,13 +45,7 @@ export class UsuarioDeleteComponent implements OnInit {
       this.toast.success('Usuário deletado com sucesso', 'Delete');
       this.router.navigate(['usuario'])
     }, ex => {
-      if(ex.error.errors) {
-        ex.error.errors.forEach((element: any) => {
-          this.toast.error(element.message);
-        });
-      } else {
-        this.toast.error(ex.error.message);
-      }
+      this.toast.error(ex.error.error);
     })
   }
 

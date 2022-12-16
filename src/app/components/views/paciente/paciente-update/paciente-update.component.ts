@@ -85,4 +85,8 @@ export class PacienteUpdateComponent implements OnInit {
     this.endereco.valid && this.cidade.valid && this.uf.valid && this.pais.valid
   }
 
+  cancel(){
+   this.router.navigate(['paciente']);
+  }
+
 }
